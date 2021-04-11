@@ -50,7 +50,16 @@ ggplot(tbbt_data, aes(x=overall_number_of_episode, y=us_viewers_in_mln)) +
   scale_x_continuous(breaks = round(seq(min(tbbt_data$overall_number_of_episode), max(tbbt_data$overall_number_of_episode), by = 25),1))
 ```
 
+# A graph of the episode-to-episode changes in viewership
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(quantmod)
+tbbt_data$pct_change <- Delt(tbbt_data$us_viewers_in_mln)
 
+ggplot(tbbt_data, aes(x=overall_number_of_episode, y=pct_change)) +
+  geom_line() + 
+  labs(title='A graph of the episode-to-episode changes in viewership', x='Overall number of episodes', y='US viewers - percentage change') +
+  scale_x_continuous(breaks = round(seq(min(tbbt_data$overall_number_of_episode), max(tbbt_data$overall_number_of_episode), by = 25),1))
+```
 
 
 
