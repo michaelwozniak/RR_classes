@@ -41,8 +41,14 @@ tbbt_data <- read_delim("Data/tbbt_data.csv",
 knitr::kable(summary(tbbt_data))
 ```
 
-
-
+# A graph of the viewership over time
+```{r, echo=FALSE}
+library(ggplot2)
+ggplot(tbbt_data, aes(x=overall_number_of_episode, y=us_viewers_in_mln)) +
+  geom_point() + 
+  labs(title='A graph of the viewership over time', x='Overall number of episodes', y='US viewers in mln') +
+  scale_x_continuous(breaks = round(seq(min(tbbt_data$overall_number_of_episode), max(tbbt_data$overall_number_of_episode), by = 25),1))
+```
 
 
 
