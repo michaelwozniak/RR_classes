@@ -61,8 +61,10 @@ ggplot(tbbt_data, aes(x=overall_number_of_episode, y=pct_change)) +
   scale_x_continuous(breaks = round(seq(min(tbbt_data$overall_number_of_episode), max(tbbt_data$overall_number_of_episode), by = 25),1))
 ```
 
-
-
+# A short description of the observed changes that includes inline references to numbers
+1. The viewership increase by `r tail(tbbt_data$us_viewers_in_mln,1)-head(tbbt_data$us_viewers_in_mln,1)` mln between first and last episode.
+2. The avarage percentage change from episode to episode is equal `r mean(tbbt_data$pct_change, na.rm = TRUE)` and its standard deviation is equal to `r sd(tbbt_data$pct_change, na.rm = TRUE)`.
+3. The difference between the audience for the best and weakest episode is `r max(tbbt_data$us_viewers_in_mln) - min(tbbt_data$us_viewers_in_mln)` mln.
 
 
 
