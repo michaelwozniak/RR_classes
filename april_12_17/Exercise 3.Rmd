@@ -2,7 +2,7 @@
 title: "Exercise3"
 author: "Michał Woźniak"
 date: "15 04 2021"
-output: ioslides_presentation
+output: powerpoint_presentation
 ---
 
 ```{r setup, include=FALSE}
@@ -28,7 +28,7 @@ Then create a short report (you can copy the content from Wikipedia or other pag
 ## A brief description of the show
 _The Big Bang Theory_ is an American comedy television series created and executively produced by _Chuck Lorre_ and _Bill Prady_. Like the name of the series itself (with the exception of the first episode _"Pilot"_), episode titles of _The Big Bang Theory_ always start with _"The"_ and resemble the name of a scientific principle, theory or experiment, whimsically referencing a plot point or quirk in that episode.
 
-## A photo with the logo of the show
+## A photo with the logo of the show | Source: Wikipedia
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/TBBT_logo.svg/195px-TBBT_logo.svg.png)
 
 ## A summary of some basic statistics
