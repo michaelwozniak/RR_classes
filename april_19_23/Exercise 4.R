@@ -1,6 +1,6 @@
-
+rm(list=ls())
 # Sets the path to the parent directory of RR classes
-setwd("C:\\Users\\whard\\OneDrive\\Desktop\\Reproducible research\\RR_classes\\RR_classes\\april_19_23")
+setwd("D:\\RR\\RR_classes\\april_19_23")
 
 #   Import data from the O*NET database, at ISCO-08 occupation level.
 # The original data uses a version of SOC classification, but the data we load here
@@ -27,6 +27,16 @@ isco6 <- read_excel("Data\\Eurostat_employment_isco.xlsx", sheet="ISCO6")
 isco7 <- read_excel("Data\\Eurostat_employment_isco.xlsx", sheet="ISCO7")
 isco8 <- read_excel("Data\\Eurostat_employment_isco.xlsx", sheet="ISCO8")
 isco9 <- read_excel("Data\\Eurostat_employment_isco.xlsx", sheet="ISCO9")
+
+library(tidyverse)
+path <- "Data\\Eurostat_employment_isco.xlsx"
+
+isco <- path %>% 
+  excel_sheets() %>% 
+  set_names() %>% 
+  map(read_excel, path = path)
+
+isco$Total <- NULL
 
 # We will focus on three countries, but perhaps we could clean this code to allow it
 # to easily run for all the countries in the sample?
